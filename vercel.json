@@ -1,52 +1,10 @@
 {
-  "functions": {
-    "api/generate.js": {
-      "maxDuration": 60
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    }
-  ]
+    "version": 2,
+      "functions": {
+          "api/*.js": {
+                "maxDuration": 60
+                    }
+                      }
+                      }
+                      
 }
-```
-
----
-
-## **ARCHIVO 5: .env.example** (Template para variables de entorno)
-
-Crea este archivo como referencia (NO subir el .env real a GitHub):
-```
-ANTHROPIC_API_KEY=tu_api_key_aqui
-```
-
----
-
-## ✅ **Lo que incluyen estos archivos:**
-
-**api/generate.js:**
-- ✅ Timeout de 60 segundos (`maxDuration: 60`)
-- ✅ Filtro anti-texto INVIOLABLE (bloquea Browns, text, words, etc.)
-- ✅ 3 endpoints: script, image, video
-- ✅ Validación de errores completa
-- ✅ Protección de API Key (usa `process.env.ANTHROPIC_API_KEY`)
-
-**vercel.json:**
-- ✅ Configuración `maxDuration: 60` para plan Hobby
-- ✅ Rewrite rules para rutas API
-
----
-
-## 📋 **PASOS FINALES PARA DESPLEGAR:**
-
-1. **Estructura de carpetas:**
-```
-tu-proyecto/
-├── index.html
-├── app.js
-├── vercel.json
-├── .env (crear localmente, NO subir a GitHub)
-└── api/
-    └── generate.js
